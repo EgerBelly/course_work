@@ -19,12 +19,18 @@ public class TimerProcedure {
 		if (entity == null)
 			return;
 		entity.getPersistentData().putDouble("Timer", (entity.getPersistentData().getDouble("Timer") + 1));
-		if (entity.getPersistentData().getDouble("Timer") == 440) {
+		if (entity.getPersistentData().getDouble("Timer") == 200) {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(Component.literal("\u0432\u043E\u043B\u043D\u0430 \u043D\u0430\u0434\u0432\u0438\u0433\u0430\u0435\u0442\u0441\u044F!!!!!!"), (true));
+				_player.displayClientMessage(Component.literal("\u0412\u043E\u043B\u043D\u0430 \u043F\u0440\u0438\u0434\u0435\u0442 \u0447\u0435\u0440\u0435\u0437 5 \u043C\u0438\u043D\u0443\u0442!!!"), (true));
 		}
-		if (entity.getPersistentData().getDouble("Timer") == 500) {
-			world.getLevelData().setRaining((true));
+		if (entity.getPersistentData().getDouble("Timer") == 5800) {
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("\u0412\u043E\u043B\u043D\u0430 \u0431\u043B\u0438\u0437\u043A\u043E!!!"), (true));
+		}
+		if (entity.getPersistentData().getDouble("Timer") == 6045) {
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getY())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather thunder");
 			if (world instanceof ServerLevel _serverworld) {
 				StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("supermod", "spawn_2"));
 				if (template != null) {
@@ -35,23 +41,76 @@ public class TimerProcedure {
 			for (int index0 = 0; index0 < (int) (5); index0++) {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = new ZombieEasyNotLightEyesEntity(SupermodModEntities.ZOMBIE_EASY_NOT_LIGHT_EYES.get(), _level);
-					entityToSpawn.moveTo((entity.getX() + 5), (entity.getY() + 1), (entity.getZ() + 5), world.getRandom().nextFloat() * 360F, 0);
+					entityToSpawn.moveTo((entity.getX() + 8), (entity.getY() + 1), (entity.getZ() + 8), world.getRandom().nextFloat() * 360F, 0);
 					if (entityToSpawn instanceof Mob _mobToSpawn)
 						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
 					world.addFreshEntity(entityToSpawn);
 				}
 			}
-			if (entity.getPersistentData().getDouble("Timer") == 550) {
-				for (int index1 = 0; index1 < (int) (5); index1++) {
-					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = new ZombieEasyNotLightEyesEntity(SupermodModEntities.ZOMBIE_EASY_NOT_LIGHT_EYES.get(), _level);
-						entityToSpawn.moveTo((entity.getX() + 5), (entity.getY()), (entity.getZ() + 5), world.getRandom().nextFloat() * 360F, 0);
-						if (entityToSpawn instanceof Mob _mobToSpawn)
-							_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
-						world.addFreshEntity(entityToSpawn);
-					}
+			for (int index1 = 0; index1 < (int) (2); index1++) {
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new ZombieMiddleEntity(SupermodModEntities.ZOMBIE_MIDDLE.get(), _level);
+					entityToSpawn.moveTo((entity.getX() + 8), (entity.getY() + 1), (entity.getZ() + 8), world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					world.addFreshEntity(entityToSpawn);
 				}
 			}
+		}
+		if (entity.getPersistentData().getDouble("Timer") == 6500) {
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getY())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather clear");
+		}
+		if (entity.getPersistentData().getDouble("Timer") == 7000) {
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("\u0412\u043E\u043B\u043D\u0430 \u043F\u0440\u0438\u0434\u0435\u0442 \u0447\u0435\u0440\u0435\u0437 5 \u043C\u0438\u043D\u0443\u0442!!!"), (true));
+		}
+		if (entity.getPersistentData().getDouble("Timer") == 12500) {
+			if (entity instanceof Player _player && !_player.level.isClientSide())
+				_player.displayClientMessage(Component.literal("\u0412\u043E\u043B\u043D\u0430 \u0431\u043B\u0438\u0437\u043A\u043E!!!"), (true));
+		}
+		if (entity.getPersistentData().getDouble("Timer") == 12580) {
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getY())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather thunder");
+			if (world instanceof ServerLevel _serverworld) {
+				StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("supermod", "spawn_2"));
+				if (template != null) {
+					template.placeInWorld(_serverworld, new BlockPos(entity.getX() + 5, entity.getY(), entity.getZ() + 5), new BlockPos(entity.getX() + 5, entity.getY(), entity.getZ() + 5),
+							new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
+				}
+			}
+			for (int index2 = 0; index2 < (int) (5); index2++) {
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new ZombieEasyNotLightEyesEntity(SupermodModEntities.ZOMBIE_EASY_NOT_LIGHT_EYES.get(), _level);
+					entityToSpawn.moveTo((entity.getX() + 8), (entity.getY() + 1), (entity.getZ() + 8), world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					world.addFreshEntity(entityToSpawn);
+				}
+			}
+			for (int index3 = 0; index3 < (int) (2); index3++) {
+				if (world instanceof ServerLevel _level) {
+					Entity entityToSpawn = new ZombieMiddleEntity(SupermodModEntities.ZOMBIE_MIDDLE.get(), _level);
+					entityToSpawn.moveTo((entity.getX() + 8), (entity.getY() + 1), (entity.getZ() + 8), world.getRandom().nextFloat() * 360F, 0);
+					if (entityToSpawn instanceof Mob _mobToSpawn)
+						_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+					world.addFreshEntity(entityToSpawn);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = new ZombieHardEntity(SupermodModEntities.ZOMBIE_HARD.get(), _level);
+				entityToSpawn.moveTo((entity.getX() + 8), (entity.getY() + 1), (entity.getZ() + 8), world.getRandom().nextFloat() * 360F, 0);
+				if (entityToSpawn instanceof Mob _mobToSpawn)
+					_mobToSpawn.finalizeSpawn(_level, world.getCurrentDifficultyAt(entityToSpawn.blockPosition()), MobSpawnType.MOB_SUMMONED, null, null);
+				world.addFreshEntity(entityToSpawn);
+			}
+		}
+		if (entity.getPersistentData().getDouble("Timer") == 13000) {
+			if (world instanceof ServerLevel _level)
+				_level.getServer().getCommands().performPrefixedCommand(
+						new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getY())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "weather clear");
 		}
 	}
 }
