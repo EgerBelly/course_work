@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": {
+    "type": "forge:any"
+  },
+  "spawners": {
+    "type": "supermod:zombie_easy_not_light_eyes",
+    "weight": 100,
+    "minCount": 2,
+    "maxCount": 5
+  }
+}

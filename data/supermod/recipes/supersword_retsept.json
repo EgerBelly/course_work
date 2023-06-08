@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  2",
+    " 4 ",
+    "6  "
+  ],
+  "key": {
+    "2": {
+      "item": "supermod:superitem"
+    },
+    "4": {
+      "item": "supermod:superitem"
+    },
+    "6": {
+      "item": "minecraft:diamond_sword"
+    }
+  },
+  "result": {
+    "item": "supermod:supersword",
+    "count": 1
+  }
+}
