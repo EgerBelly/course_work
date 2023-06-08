@@ -1,0 +1,11 @@
+{
+  "scary_sound1": {
+    "category": "neutral",
+    "sounds": [
+      {
+        "name": "supermod:minecraft_--_pieshchiernyie_zvuki_4_www.lightaudio.ru",
+        "stream": false
+      }
+    ]
+  }
+}
